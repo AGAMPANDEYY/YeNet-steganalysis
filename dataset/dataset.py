@@ -53,7 +53,8 @@ class DatasetLoad(Dataset):
             Tuple[Tensor, Tensor]: cover and stego pair.
         """
         index += 1
-        img_name = str(index) +".png" #".pgm"
+        #img_name = str(index) +".png" #".pgm"
+        img_name = f"{idx:05d}.png"  #FOR KAGGLE COMPATIBILITY
         cover_img = io.imread(os.path.join(self.cover, img_name))
         stego_img = io.imread(os.path.join(self.stego, img_name))
         # pylint: disable=E1101
