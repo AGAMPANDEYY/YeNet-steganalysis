@@ -52,7 +52,11 @@ if __name__ == "__main__":
         opt.valid_cover_path,
         opt.valid_stego_path,
         opt.val_size,
-        transform=transforms.ToTensor(),
+        transform=transforms.Compose([             #ADDED COMPOSE FOR VAL DATA
+            transforms.ToPILImage(),
+            transforms.Grayscale(num_output_channels=1),
+            transforms.Resize((256,256))),
+            transforms.ToTensor(),
     )
 
     # Creating training and validation loader.
