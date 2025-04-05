@@ -55,8 +55,10 @@ if __name__ == "__main__":
         transform=transforms.Compose([             #ADDED COMPOSE FOR VAL DATA
             transforms.ToPILImage(),
             transforms.Grayscale(num_output_channels=1),
-            transforms.Resize((256,256))),
+            transforms.Resize((256,256)),
             transforms.ToTensor(),
+        ]
+       ),
     )
 
     # Creating training and validation loader.
