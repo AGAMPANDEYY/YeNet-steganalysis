@@ -40,6 +40,7 @@ if __name__ == "__main__":
         transform=transforms.Compose(
             [
                 transforms.ToPILImage(),
+                transforms.Grayscale(num_output_channels=1),
                 transforms.RandomRotation(degrees=90),
                 transforms.ToTensor(),
             ]
