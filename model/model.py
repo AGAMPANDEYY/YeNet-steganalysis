@@ -19,7 +19,7 @@ class SRMConv(nn.Module):
         self.device = torch.device(
             "cuda:0" if torch.cuda.is_available() else "cpu"
         )
-        self.srm = torch.from_numpy(np.load(".\\srm.npy")).to(
+        self.srm = torch.from_numpy(np.load("model/srm.npy")).to(    #model/srm.npy   .\\srm.npy
             self.device, dtype=torch.float
         )
         self.tlu = nn.Hardtanh(min_val=-3.0, max_val=3.0)
