@@ -41,6 +41,7 @@ if __name__ == "__main__":
             [
                 transforms.ToPILImage(),
                 transforms.Grayscale(num_output_channels=1),
+                transforms.Resize((256,256)),
                 transforms.RandomRotation(degrees=90),
                 transforms.ToTensor(),
             ]
